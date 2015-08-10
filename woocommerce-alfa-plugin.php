@@ -43,11 +43,14 @@ class WC_ALFA_Plugin {
 	 * @since 1.0
 	 */
 	public function WC_ALFA_Plugin_notice() {
-		?>
-		<div class="updated">
-			<p><?php _e( 'WooCommerce now customized for ALFA', 'WC_ALFA_Plugin' ); ?></p>
-		</div>
-		<?php
+		global $pagenow;
+		if ( $pagenow == 'plugins.php' ) {
+			?>
+				<div class="updated">
+					<p><?php _e( 'WooCommerce has been customized for ALFA using the WooCommerce ALFA Plugin', 'WC_ALFA_Plugin' ); ?></p>
+				</div>
+			<?php
+		}
 	}
 
 	/**
