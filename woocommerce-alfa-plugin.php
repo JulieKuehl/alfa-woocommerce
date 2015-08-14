@@ -95,9 +95,8 @@ function woo_shop_page_title( $page_title ) {
 }
 add_filter( 'woocommerce_page_title', 'woo_shop_page_title');
 
-
 /**
- * Register the post-to-post connection type
+ * Register the post-to-post connection types
  */
 function alfa_connection_types() {
 	p2p_register_connection_type( array (
