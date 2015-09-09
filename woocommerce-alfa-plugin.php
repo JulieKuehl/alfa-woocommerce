@@ -121,3 +121,45 @@ function woo_remove_product_tabs( $tabs ) {
 	return $tabs;
 
 }
+
+/**
+ * Disable the WooCommerce stylesheets
+ */
+
+//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+/**
+ * Enqueue custom WooCommerce stylesheet
+ */
+
+function wp_enqueue_woocommerce_style(){
+	wp_register_style( 'alfa-woocommerce', get_template_directory_uri() . '/woocommerce.css' );
+
+	if ( class_exists( 'woocommerce' ) ) {
+		wp_enqueue_style( 'alfa-woocommerce' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'wp_enqueue_woocommerce_style' );
+
+
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Change number of related products on product page
+ * Set your own value for 'posts_per_page'
+ *
+ */
+function woo_related_products_limit() {
+	global $product;
+
+	$args['posts_per_page'] = 4;
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+
+	  $args['posts_per_page'] = 4; // 4 related products
+	  $args['columns'] = 4; // arranged in 4 columns
+	  return $args;
+  }
