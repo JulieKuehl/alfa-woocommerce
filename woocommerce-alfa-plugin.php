@@ -104,6 +104,11 @@ function alfa_connection_types() {
 		'from'  => 'product',
 		'to'    => 'artist'
 	) );
+	p2p_register_connection_type( array (
+		'name'  => 'product_to_exhibition',
+		'from'  => 'product',
+		'to'    => 'exhibition'
+	) );
 }
 add_action( 'p2p_init', 'alfa_connection_types' );
 
