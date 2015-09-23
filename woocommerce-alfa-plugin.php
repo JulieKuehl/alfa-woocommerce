@@ -115,7 +115,7 @@ function alfa_connection_types() {
 		'name'  => 'artist_to_exhibition',
 		'from'  => 'exhibition',
 		'to'    => 'artist',
-	))
+	));
 }
 
 
