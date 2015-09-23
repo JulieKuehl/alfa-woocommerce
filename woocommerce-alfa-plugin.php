@@ -98,19 +98,26 @@ add_filter( 'woocommerce_page_title', 'woo_shop_page_title');
 /**
  * Register the post-to-post connection types
  */
+add_action( 'p2p_init', 'alfa_connection_types' );
+
 function alfa_connection_types() {
 	p2p_register_connection_type( array (
 		'name'  => 'product_to_artist',
 		'from'  => 'product',
-		'to'    => 'artist'
+		'to'    => 'artist',
 	) );
 	p2p_register_connection_type( array (
 		'name'  => 'product_to_exhibition',
 		'from'  => 'product',
 		'to'    => 'exhibition'
 	) );
+	p2p_register_connection_type( array(
+		'name'  => 'artist_to_exhibition',
+		'from'  => 'exhibition',
+		'to'    => 'artist',
+	))
 }
-add_action( 'p2p_init', 'alfa_connection_types' );
+
 
 /**
  * Remove the tabs from product pages
