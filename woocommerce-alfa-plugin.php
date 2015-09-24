@@ -116,11 +116,6 @@ function alfa_connection_types() {
 		'from'  => 'exhibition',
 		'to'    => 'artist',
 	));
-	p2p_register_connection_type( array(
-		'name'  => 'artist_to_exhibition',
-		'from'  => 'artist',
-		'to'    => 'exhibition',
-	));
 }
 
 
