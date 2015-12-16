@@ -175,3 +175,46 @@ add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_arg
 	  $args['columns'] = 4; // arranged in 4 columns
 	  return $args;
   }
+
+/**
+ * WooCommerce Single Product Page Customization
+ * ---------------------------------------------
+ *
+ * Remove and reorder elements specific to ALFA
+ *
+ */
+
+/**
+ * Product Information Box (before content)
+ *
+ * @see woocommerce_template_single_title()
+ * @see woocommerce_template_single_price()
+ * @see woocommerce_template_single_excerpt()
+ * @see woocommerce_template_single_meta()
+ * @see woocommerce_template_single_sharing()
+ */
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_title', 5 );
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_rating', 10 );
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_price', 10 );
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_meta', 40 );
+//add_action( 'alfa_woocommerce_single_product_info', 'woocommerce_template_single_sharing', 50 );
+
+
+
+/**
+ * Product Summary Box (after content)
+ *
+ * @see woocommerce_template_single_title()
+ * @see woocommerce_template_single_price()
+ * @see woocommerce_template_single_excerpt()
+ * @see woocommerce_template_single_meta()
+ * @see woocommerce_template_single_sharing()
+ */
+//add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+//add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+//add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+//add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'alfa_woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
